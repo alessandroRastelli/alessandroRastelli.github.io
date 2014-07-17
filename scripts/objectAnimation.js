@@ -116,8 +116,6 @@ function createQuadro(x,y,z,corn,oper){
     
     return Quadro
 }
-
-
 function createInterrutore(obj){
     var interut = new THREE.Object3D();
     var geometry = new THREE.BoxGeometry( 0.5, 0.3, 0.05 );
@@ -129,14 +127,13 @@ function createInterrutore(obj){
 
     var tasto = new THREE.Mesh( geometry2, material2 );
     
-    animateLigth(cornice,obj);
+    animateLigth(cornice,obj,tasto);
     cornice.add(tasto);
     interut.add(cornice);
-    interut.tasto=tasto;
-
     
     return interut;
 }
+
 function createTv(id){
     var TV = new THREE.Object3D();
     var background = createMesh(new THREE.BoxGeometry(3, 3, 0.2), "corniceTV.png");
@@ -322,7 +319,7 @@ function QuadroList(){
     quadro1=createQuadro(2,2,0.15,"cornice.jpg","gioconda.jpg");
     quadro1.scale.x=1;
     quadro1.rotation.z = -  1/2*Math.PI;
-    quadro1.position.x=9.2;
+    quadro1.position.x=9.3;
     quadro1.position.y=9.15;
     quadro1.position.z=3.5;
 

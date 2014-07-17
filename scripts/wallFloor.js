@@ -207,7 +207,7 @@ function WallList(){
     p27.rotation.y = 1/2*Math.PI;
     p27.position.x=25.85
 
-    p28 = createTexturedShape(Wall,"Spatolato.jpg",vert28,0.08,0.08);
+    p28 = createTexturedShape(Wall,"Spatolato.jpg",vert28,0.05,0.05);
     p28.position.y=12.65;
     p28.rotation.x = 1/2*Math.PI;
 

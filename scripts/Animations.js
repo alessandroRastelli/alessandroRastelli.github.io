@@ -114,21 +114,26 @@ function animationPc(obj){
 }
 
 
-function animateLigth(geom,obj){
-    ligth = false;    
+function animateLigth(geom,obj,tasto){
+    ligth = false;
+    angleInter=-Math.PI/8;
     geom.interact = function () {
         if(!ligth) {
+            var movTween1 = new TWEEN.Tween(tasto.rotation)
+            .to({ x: angleInter },500)
+            .start();
             for (var i = 1; i <= obj.length; i++) {
-                //obj[i-1].pointLight.intensity=2.5;
                 obj[i-1].pointLight.intensity=1.5;
-
             };
             ligth = true;
         }
         else {
-                for (var i = 1; i <= obj.length; i++) {
-                    obj[i-1].pointLight.intensity=0;
-                };
+            var movTween1 = new TWEEN.Tween(tasto.rotation)
+            .to({ x: 0 },500)
+            .start();
+            for (var i = 1; i <= obj.length; i++) {
+                obj[i-1].pointLight.intensity=0;
+            };
             ligth = false;
         }
     }
